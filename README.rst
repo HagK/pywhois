@@ -1,3 +1,24 @@
+Modifications on this fork
+==========================
+* to call a function whois on module whois, python3 will lookup in whois/whois.py for init
+
+# modified __init.py__
+- from .whois import NICClient
++ from .query import NICClient
+
+* whois.denic.de has more entities, like 'changed'
+whois -h de.whois-servers.net test.de
+vs.
+whois -h whois.denic.de test.de
+
+# modified whois.py
+-    DENICHOST = "de.whois-servers.net"
++    DENICHOST = "whois.denic.de"
+
+# renamed whois.py
+mv whois.py query.py
+
+
 Goal
 ====
 
